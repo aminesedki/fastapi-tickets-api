@@ -1,0 +1,40 @@
+services:
+  api-dev:
+    profiles: [ "dev" ]
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        INSTALL_DEV: "true"
+    container_name: fastapi_dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./app:/app
+      - ./logs:/app/logs
+    environment:
+      ENV: "dev"
+      API_VERSION: "v1"
+      DATABASE_URL: "sqlite+aiosqlite:///./dev.db"
+      LOG_LEVEL: "DEBUG"
+    command: uvicorn main:app --host 0.0.0.0 --port 8080 --reload
+
+  api-prod:
+    profiles: [ "prod" ]
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        INSTALL_DEV: "false"
+    container_name: fastapi_prod
+    ports:
+      - "8080:8080"
+    # no source mount in prod
+    volumes:
+      - ./logs:/app/logs
+    environment:
+      ENV: "prod"
+      API_VERSION: "v1"
+      DATABASE_URL: "sqlite+aiosqlite:///./prod.db"
+      LOG_LEVEL: "INFO"
+    command: uvicorn main:app --host 0.0.0.0 --port 8080

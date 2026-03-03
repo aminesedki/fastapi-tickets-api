@@ -1,0 +1,7 @@
+pytest
+pytest-asyncio
+httpx
+aiosqlite
+faker
+ruff
+pytest-cov

@@ -3,8 +3,8 @@ from datetime import datetime
 from sqlalchemy import DateTime, Integer, String, func
 from sqlalchemy.orm import Mapped, mapped_column
 
-from db.base import Base
-from domain.enums import TicketStatus
+from app.db.base import Base
+from app.domain.enums import TicketStatus
 
 
 class Ticket(Base):

@@ -6,9 +6,9 @@ from fastapi import FastAPI
 from httpx import ASGITransport, AsyncClient
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 
-from api.base import api_router  # adjust if needed
-from db.base import Base
-from db.deps import get_db  # IMPORTANT: same import used by your routes
+from app.api.base import api_router  # adjust if needed
+from app.db.base import Base
+from app.db.deps import get_db  # IMPORTANT: same import used by your routes
 
 
 def start_application() -> FastAPI:

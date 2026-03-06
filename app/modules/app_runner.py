@@ -5,10 +5,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 
-from api.base import api_router
-from core.logging_config import setup_logging
-from core.settings import settings
-from utils.db import init_db
+from app.api.base import api_router
+from app.core.logging_config import setup_logging
+from app.core.settings import settings
+from app.utils.db import init_db
 
 setup_logging()
 

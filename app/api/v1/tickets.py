@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from db.deps import get_db
-from domain.enums import TicketStatus
-from schemas.ticket import TicketCreate, TicketOut, TicketUpdate
-from services.ticket_service import (
+from app.db.deps import get_db
+from app.domain.enums import TicketStatus
+from app.schemas.ticket import TicketCreate, TicketOut, TicketUpdate
+from app.services.ticket_service import (
     create_ticket,
     delete_ticket,
     get_ticket,

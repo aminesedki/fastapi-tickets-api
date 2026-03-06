@@ -1,3 +1,9 @@
+[project]
+name = "fastapi-ticket-api"
+version = "0.1.0"
+description = "FastAPI REST API"
+requires-python = ">=3.10"
+
 [tool.ruff]
 line-length = 100
 target-version = "py312"
@@ -9,7 +15,7 @@ exclude = [
   ".ruff_cache",
   "__pycache__",
   "*.db",
-  "logs",
+  "app/logs",
 ]
 
 [tool.ruff.lint]
@@ -17,7 +23,7 @@ select = ["E", "F", "W", "I", "UP", "B"]
 ignore = []
 
 [tool.ruff.lint.per-file-ignores]
-"api/**/*.py" = ["B008"]
+"app/api/**/*.py" = ["B008"]
 
 [tool.ruff.format]
 quote-style = "double"
@@ -26,3 +32,4 @@ indent-style = "space"
 [tool.pytest.ini_options]
 pythonpath = ["."]
 testpaths = ["tests"]
+addopts = "-q"

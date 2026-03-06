@@ -1,7 +1,7 @@
 import logging
 import logging.config
 
-from core.settings import settings
+from app.core.settings import settings
 
 LOGGING_CONFIG = {
     "version": 1,

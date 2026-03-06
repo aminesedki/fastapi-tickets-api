@@ -1,6 +1,6 @@
 import uvicorn
 
-from modules.app_runner import AppRun, settings
+from app.modules.app_runner import AppRun, settings
 
 appRunInstance = AppRun()
 

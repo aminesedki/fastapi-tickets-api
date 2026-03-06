@@ -1,7 +1,7 @@
 import pytest
 from fastapi import status
-
-from core.settings import settings
+from app.core.settings import settings
+from app.domain.enums import TicketStatus
 from tests.utils.ticket import create_random_ticket, random_ticket_schema
 
 pytestmark = pytest.mark.asyncio
@@ -78,7 +78,7 @@ async def test_close_ticket_patch(client, db_session):
     assert r.status_code == status.HTTP_200_OK
 
     data = r.json()
-    assert str(data["status"]).lower() == "closed"
+    assert str(data["status"]) == TicketStatus.CLOSED
 
 
 async def test_delete_ticket(client, db_session):

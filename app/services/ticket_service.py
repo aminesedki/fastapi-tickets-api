@@ -4,8 +4,8 @@ from fastapi import HTTPException, status
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from models.ticket import Ticket
-from schemas.ticket import TicketCreate, TicketUpdate
+from app.models.ticket import Ticket
+from app.schemas.ticket import TicketCreate, TicketUpdate
 
 logger = logging.getLogger(__name__)
 

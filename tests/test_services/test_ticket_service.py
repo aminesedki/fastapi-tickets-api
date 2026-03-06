@@ -1,9 +1,9 @@
 import pytest
 from fastapi import HTTPException, status
 
-from domain.enums import TicketStatus
-from schemas.ticket import TicketCreate, TicketUpdate
-from services.ticket_service import (
+from app.domain.enums import TicketStatus
+from app.schemas.ticket import TicketCreate, TicketUpdate
+from app.services.ticket_service import (
     create_ticket,
     delete_ticket,
     get_ticket,

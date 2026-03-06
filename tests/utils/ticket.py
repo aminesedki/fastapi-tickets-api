@@ -3,9 +3,9 @@ import random
 from faker import Faker
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from domain.enums import TicketStatus
-from models.ticket import Ticket
-from schemas.ticket import TicketCreate
+from app.domain.enums import TicketStatus
+from app.models.ticket import Ticket
+from app.schemas.ticket import TicketCreate
 
 fake = Faker()
 

@@ -42,6 +42,7 @@ make --version
 │   ├── models/
 │   ├── schemas/
 │   ├── services/
+│   ├── modules/
 │   ├── tests/
 │   ├── utils/
 │   ├── logs/
@@ -57,7 +58,16 @@ make --version
 └── LICENSE
 ```
 
-## Lancer en mode développement
+## Lancer en mode développement locale
+
+make run-local
+
+make test-local
+
+make lint-local
+
+
+## Lancer en mode docker compose
 make dev-up
 
 ## Mode production
@@ -75,6 +85,7 @@ make test
 
 ## Qualité de Code
 Lint: make lint
+
 Formatage: make fmt
 
 ## Nettoyage Docker
@@ -84,6 +95,27 @@ make clean
 make clean-hard
 
 **Note:** la commande supprime volumes et images inutilisées !
+
+
+## Endpoints
+
+url : http://localhost:8080/
+
+Base URL : /api/v1/tickets
+
+Swagger: /docs
+
+GET /api/v1/tickets
+
+GET /api/v1/tickets/{id}
+
+POST /api/v1/tickets
+
+PUT /api/v1/tickets/{id}
+
+PATCH /api/v1/tickets/{id}
+
+DELETE /api/v1/tickets/{id}
 
 ## Environnements
 

@@ -2,7 +2,7 @@ from datetime import datetime
 
 from pydantic import BaseModel, Field
 
-from domain.enums import TicketStatus
+from app.domain.enums import TicketStatus
 
 
 class TicketBase(BaseModel):
